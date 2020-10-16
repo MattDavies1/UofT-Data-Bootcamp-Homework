@@ -29,15 +29,13 @@ for i in range(1, len(profit_months)):
     average_change.append(profit_values[i] - profit_values[i - 1])
 
 # Results in f-string
-output = f"""
-Financial Analysis
+output = f"""Financial Analysis
 ----------------------------
 Total Months: {total_months}
 Total: ${net_profit}
 Average  Change: ${mean(average_change):.2f}
 Greatest Increase in Profits: {profit_months[profit_values.index(max(profit_values))]} (${max(profit_values)})
-Greatest Decrease in Profits: {profit_months[profit_values.index(min(profit_values))]} (${min(profit_values)})
-"""
+Greatest Decrease in Profits: {profit_months[profit_values.index(min(profit_values))]} (${min(profit_values)})"""
 
 # Print outputs
 print(output)
