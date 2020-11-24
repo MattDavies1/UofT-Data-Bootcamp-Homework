@@ -12,7 +12,7 @@ SELECT first_name
 	, last_name
 	, hire_date
 	FROM employees
-	WHERE DATE(hire_date) BETWEEN DATE('1/1/1986') AND DATE('12/31/1986')	
+	WHERE DATE(hire_date) BETWEEN DATE('1/1/1986') AND DATE('12/31/1986');
 
 -- 3. List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
 SELECT departments.dept_number
@@ -22,11 +22,23 @@ SELECT departments.dept_number
 	, first_name
 	FROM department_managers
 	INNER JOIN departments ON departments.dept_number = department_managers.dept_number
-	INNER JOIN employees ON employees.employee_number = department_managers.employee_number
+	INNER JOIN employees ON employees.employee_number = department_managers.employee_number;
 
 -- 4. List the department of each employee with the following information: employee number, last name, first name, and department name.
+SELECT dept_name
+	, dept_emp.employee_number
+	, first_name
+	, last_name
+	FROM departments
+	INNER JOIN dept_emp ON departments.dept_number = dept_emp.dept_number
+	INNER JOIN employees ON employees.employee_number = dept_emp.employee_number;
 
 -- 5. List first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
+SELECT first_name
+	, last_name
+	, sex
+	FROM employees
+	WHERE first_name = 'Hercules' AND last_name LIKE 'B%'
 
 -- 6. List all employees in the Sales department, including their employee number, last name, first name, and department name.
 
