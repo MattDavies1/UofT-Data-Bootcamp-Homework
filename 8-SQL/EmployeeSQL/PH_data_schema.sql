@@ -15,8 +15,7 @@ CREATE TABLE employees (
 );
 
 CREATE TABLE salaries (
-	id SERIAL NOT NULL,
-	employee_number INT,
+	employee_number INT PRIMARY KEY NOT NULL,
 	FOREIGN KEY (employee_number) REFERENCES employees(employee_number),
 	salary INT
 );
@@ -27,6 +26,7 @@ CREATE TABLE departments(
 );
 
 CREATE TABLE department_managers(
+    id SERIAL PRIMARY KEY NOT NULL,
 	dept_number VARCHAR(255),
 	FOREIGN KEY (dept_number) REFERENCES departments(dept_number),
 	employee_number INT,
@@ -34,6 +34,7 @@ CREATE TABLE department_managers(
 );
 
 CREATE TABLE dept_emp(
+	id SERIAL PRIMARY KEY NOT NULL,
 	employee_number INT,
 	FOREIGN KEY (employee_number) REFERENCES employees(employee_number),
 	dept_number VARCHAR(255),
