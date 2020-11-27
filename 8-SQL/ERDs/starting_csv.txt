@@ -5,7 +5,7 @@ dept_name VARCHAR(255)
 
 department_employee_junction
 -
-employee_number INT FK - employees.employee_number
+employee_number INT FK >- employees.employee_number
 dept_number VARCHAR(255) FK - departments.dept_number
 
 department_managers
