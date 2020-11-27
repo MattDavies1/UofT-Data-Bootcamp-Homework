@@ -1,0 +1,1 @@
+hostpass = 'postgres:postgres'
