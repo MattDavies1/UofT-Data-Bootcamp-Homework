@@ -48,7 +48,7 @@ SELECT employees.employee_number,
 	FROM employees
 	INNER JOIN dept_emp ON employees.employee_number = dept_emp.employee_number
 	INNER JOIN departments ON departments.dept_number = dept_emp.dept_number
-	WHERE dept_name = 'Sales'
+	WHERE dept_name = 'Sales';
 
 -- 7. List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.
 SELECT employees.employee_number, 
@@ -65,5 +65,5 @@ SELECT last_name
 	, count(last_name) as count
 	FROM employees
 	GROUP BY last_name
-	ORDER BY count(last_name) DESC
+	ORDER BY count(last_name) DESC;
 	
