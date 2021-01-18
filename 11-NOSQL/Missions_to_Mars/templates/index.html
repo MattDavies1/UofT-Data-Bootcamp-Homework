@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <title>Mars Data!!</title>
+    </head>
+
+    <body>
+
+        <div class="jumbotron">
+            <h1 class="display-4">Mission to Mars</h1>
+            <p class="lead">This page contains information scraped from NASA to help you plan your mission to mars!</p>
+            <hr class="my-4">
+            <p>ChromeDriver hates Macs, so it might take a few refreshes to get the database to sync up (sorry! blame google's lax security policy!)</p>
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="/scrape" role="button">Get New Data!</a>
+            </p>
+        </div>
+
+        <div class="container">
+          <div class = "row">
+            <div class = "col">
+              <h1>Latest Mars News</h1>
+              <h2>{{mars.nasa_news.headline}}</h2>
+              <p>{{mars.nasa_news.teaser}}</p>
+            </div>
+            <div class = "col">
+              <h2>Mars Facts!!!</h2>
+              <table border="1" class="dataframe">
+                <thead>
+                  <tr style="text-align: right;">
+                    <th></th>
+                    <th></th>
+                  </tr>
+                  <tr>
+                    <th>Mars Profile</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>Equatorial Diameter:</th>
+                    <td>6,792 km</td>
+                  </tr>
+                  <tr>
+                    <th>Polar Diameter:</th>
+                    <td>6,752 km</td>
+                  </tr>
+                  <tr>
+                    <th>Mass:</th>
+                    <td>6.39 × 10^23 kg (0.11 Earths)</td>
+                  </tr>
+                  <tr>
+                    <th>Moons:</th>
+                    <td>2 (Phobos &amp; Deimos)</td>
+                  </tr>
+                  <tr>
+                    <th>Orbit Distance:</th>
+                    <td>227,943,824 km (1.38 AU)</td>
+                  </tr>
+                  <tr>
+                    <th>Orbit Period:</th>
+                    <td>687 days (1.9 years)</td>
+                  </tr>
+                  <tr>
+                    <th>Surface Temperature:</th>
+                    <td>-87 to -5 °C</td>
+                  </tr>
+                  <tr>
+                    <th>First Record:</th>
+                    <td>2nd millennium BC</td>
+                  </tr>
+                  <tr>
+                    <th>Recorded By:</th>
+                    <td>Egyptian astronomers</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class = "row" style="margin-top:15px">
+            <div class = "column">
+              <h2>JPL Mars Image of the Day</h2>
+              <img src="{{mars.JPL_picture_of_the_day}}" alt = "Featured Photo from JPL of MARS" width="400">
+            </div>
+          </div>
+          <h1>Images of Mars</h1>
+          <div class = "row" style="margin-top:15px">
+            <div class = "column">
+              <figure class="figure">
+                <img src = "{{mars.Hemisphere_data.0.img_url}}" alt = {{mars.Hemisphere_data.0.hemisphere}} width="400">
+                <figcaption class="figure-caption">{{mars.Hemisphere_data.0.hemisphere}} hemisphere</figcaption>
+              </figure>
+              
+            </div>
+            <div class = "column" style="margin-left:15px">
+              <figure class="figure">
+                <img src = "{{mars.Hemisphere_data.1.img_url}}" alt = {{mars.Hemisphere_data.1.hemisphere}} width="400">
+                <figcaption class="figure-caption">{{mars.Hemisphere_data.1.hemisphere}} hemisphere</figcaption>
+              </figure>
+              
+            </div>
+          </div>
+          <div class = "row" style="margin-top:15px">
+            <div class = "column">
+              <figure class="figure">
+                <img src = "{{mars.Hemisphere_data.2.img_url}}" alt = {{mars.Hemisphere_data.2.hemisphere}} width="400">
+                <figcaption class="figure-caption">{{mars.Hemisphere_data.2.hemisphere}} hemisphere</figcaption>
+              </figure>
+              
+            </div>
+            <div class = "column" style="margin-left:15px">
+              <figure class="figure">
+                <img src = "{{mars.Hemisphere_data.3.img_url}}" alt = {{mars.Hemisphere_data.3.hemisphere}} width="400">
+                <figcaption class="figure-caption">{{mars.Hemisphere_data.3.hemisphere}} hemisphere</figcaption>
+              </figure>
+              
+            </div>
+          </div>
+        </div> 
+    </body>
+</html>
