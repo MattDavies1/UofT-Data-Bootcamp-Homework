@@ -11,8 +11,8 @@ var form = d3.select("#form");
 var tbody = d3.select("tbody");
 
 // event handelers
-button.on("click", filterFunc)
-form.on("submit", filterFunc)
+button.on("click", filterFunc);
+form.on("submit", filterFunc);
 
 // function to filter table
 function filterFunc() {
