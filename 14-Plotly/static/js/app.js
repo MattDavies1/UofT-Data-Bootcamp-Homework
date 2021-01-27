@@ -97,6 +97,7 @@ function bubbleFunction(subject_id){
             y: sample_values,
             mode: "markers",
             marker: {
+                color: otu_ids,
                 size: sample_values
             },
             text:labels
